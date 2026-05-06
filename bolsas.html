@@ -1,244 +1,219 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SKAD | Bolsas</title>
-    <meta name="description" content="Categoria de bolsas SKAD com produtos fictícios para demonstração." />
-    <link rel="preconnect" href="https://images.unsplash.com" />
-    <link rel="stylesheet" href="./src/styles.css" />
-    <script src="./src/main.js" defer></script>
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="top-strip">
-        <p>Frete grátis acima de R$ 299 | 10% OFF na primeira compra</p>
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKAD | Bolsas</title>
 
-      <div class="header-main">
-        <a class="logo" href="./index.html" aria-label="SKAD - página inicial">
-          <img class="logo-image" src="./src/assets/skad-logo.svg" alt="SKAD" />
-        </a>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Georgia", "Times New Roman", serif;
+      background: #eae6df;
+      color: #1c1c1c;
+    }
 
-        <form class="site-search" role="search">
-          <input class="search-input" type="search" name="busca" placeholder="O que você procura?" aria-label="Buscar produtos" />
-          <button class="search-button" type="submit" aria-label="Pesquisar">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="11" cy="11" r="7" />
-              <path d="m16 16 4 4" />
-            </svg>
-          </button>
-        </form>
+    .top-strip {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 8px;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
 
-        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+    .header-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 80px;
+      background: #fff;
+    }
 
-        <nav class="main-nav" aria-label="Menu principal">
-          <ul class="menu-list">
-            <li class="menu-item has-dropdown">
-              <a href="./bolsas.html" class="nav-link">Bolsas</a>
-              <div class="dropdown" aria-label="Categorias de bolsas">
-                <div class="dropdown-menu-panel">
-                  <span class="dropdown-title">Categorias</span>
-                  <ul class="dropdown-list">
-                    <li><a href="./bolsas.html">Bolsa de Ombro</a></li>
-                    <li><a href="./bolsas.html">Bolsa de Mão</a></li>
-                    <li><a href="./bolsas.html">Bolsa Transversal</a></li>
-                    <li><a href="./bolsas.html">Shoulder Bag</a></li>
-                    <li><a href="./bolsas.html">Bolsa para Garrafa</a></li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-            <li class="menu-item"><a href="./index.html#categorias" class="nav-link">Necessaires</a></li>
-            <li class="menu-item has-dropdown">
-              <a href="./index.html#carteiras" class="nav-link">Carteiras</a>
-              <div class="dropdown" aria-label="Categorias de carteiras">
-                <div class="dropdown-menu-panel">
-                  <span class="dropdown-title">Carteiras</span>
-                  <ul class="dropdown-list">
-                    <li><a href="./index.html#produtos">Masculina</a></li>
-                    <li><a href="./index.html#produtos">Feminina</a></li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-            <li class="menu-item"><a href="./index.html#categorias" class="nav-link">Eco Bags</a></li>
-          </ul>
-        </nav>
+    .logo img {
+      width: 80px;
+    }
 
-        <div class="header-actions" aria-label="Ações da loja">
-          <a class="user-link" href="./login.html" aria-label="Acessar conta">
-            <svg class="user-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
-              <path d="M5 20a7 7 0 0 1 14 0" />
-            </svg>
-          </a>
-          <a class="cart-link" href="./carrinho.html" aria-label="Carrinho">
-            <svg class="cart-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M6 8h12l-1 12H7L6 8Z" />
-              <path d="M9 8V7a3 3 0 0 1 6 0v1" />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </header>
+    .site-search input {
+      padding: 8px 12px;
+      width: 260px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
 
-    <main>
-      <section class="page-hero">
-        <div>
-          <span class="eyebrow">Categoria</span>
-          <h1>Bolsas</h1>
-          <p>Modelos fictícios selecionados para demonstrar uma vitrine elegante, clara e focada em conversão.</p>
-        </div>
-      </section>
+    .header-actions a {
+      margin-left: 15px;
+      font-size: 20px;
+      text-decoration: none;
+    }
 
-      <section class="listing-section" aria-labelledby="listing-title">
-        <aside class="filter-panel" aria-label="Filtros de produtos">
-          <h2>Filtros</h2>
-          <div class="filter-group">
-            <span>Categoria</span>
-            <button type="button">Ombro</button>
-            <button type="button">Mão</button>
-            <button type="button">Transversal</button>
-          </div>
-          <div class="filter-group">
-            <span>Faixa de preço</span>
-            <button type="button">Até R$ 250</button>
-            <button type="button">R$ 250 - R$ 400</button>
-            <button type="button">Acima de R$ 400</button>
-          </div>
-        </aside>
+    /* TÍTULO */
+    .page-hero {
+      padding: 50px 80px 10px;
+    }
 
-        <div class="listing-content">
-          <div class="listing-toolbar">
-            <div>
-              <span class="eyebrow">Coleção SKAD</span>
-              <h2 id="listing-title">Bolsas em destaque</h2>
-            </div>
-            <span>8 produtos</span>
-          </div>
+    .page-hero h1 {
+      font-size: 56px;
+      font-weight: 400;
+      margin: 0;
+      letter-spacing: -1px;
+    }
 
-          <div class="product-grid catalog-grid">
-            <article class="product-card" data-name="Bolsa Tote Siena" data-category="ombro">
-              <a class="product-image" href="./produto.html">
-                <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=80" alt="Bolsa tote caramelo" />
-              </a>
-              <div class="product-info">
-                <p>Bolsa Tote Siena</p>
-                <strong>R$ 289,90</strong>
-                <a class="product-cta" href="./produto.html">Ver produto</a>
-              </div>
-            </article>
-            <article class="product-card" data-name="Bolsa Estruturada Noir" data-category="mão">
-              <a class="product-image" href="./produto.html">
-                <img src="https://images.unsplash.com/photo-1614179689702-355944cd0918?auto=format&fit=crop&w=900&q=80" alt="Bolsa preta estruturada" />
-              </a>
-              <div class="product-info">
-                <p>Bolsa Estruturada Noir</p>
-                <strong>R$ 349,90</strong>
-                <a class="product-cta" href="./produto.html">Ver produto</a>
-              </div>
-            </article>
-            <article class="product-card" data-name="Mochila Urban Soft" data-category="ombro">
-              <a class="product-image" href="./produto.html">
-                <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=900&q=80" alt="Mochila urbana clara" />
-              </a>
-              <div class="product-info">
-                <p>Mochila Urban Soft</p>
-                <strong>R$ 259,90</strong>
-                <a class="product-cta" href="./produto.html">Ver produto</a>
-              </div>
-            </article>
-            <article class="product-card" data-name="Bolsa Weekend Couro" data-category="ombro">
-              <a class="product-image" href="./produto.html">
-                <img src="https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?auto=format&fit=crop&w=900&q=80" alt="Bolsa de viagem em couro" />
-              </a>
-              <div class="product-info">
-                <p>Bolsa Weekend Couro</p>
-                <strong>R$ 429,90</strong>
-                <a class="product-cta" href="./produto.html">Ver produto</a>
-              </div>
-            </article>
-            <article class="product-card" data-name="Bolsa de Ombro Lumi" data-category="ombro">
-              <a class="product-image" href="./produto.html">
-                <img src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=900&q=80" alt="Bolsa feminina estruturada clara" />
-              </a>
-              <div class="product-info">
-                <p>Bolsa de Ombro Lumi</p>
-                <strong>R$ 319,90</strong>
-                <a class="product-cta" href="./produto.html">Ver produto</a>
-              </div>
-            </article>
-            <article class="product-card" data-name="Bolsa Transversal Aura" data-category="transversal">
-              <a class="product-image" href="./produto.html">
-                <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=900&q=80" alt="Bolsa transversal pequena" />
-              </a>
-              <div class="product-info">
-                <p>Bolsa Transversal Aura</p>
-                <strong>R$ 239,90</strong>
-                <a class="product-cta" href="./produto.html">Ver produto</a>
-              </div>
-            </article>
-            <article class="product-card" data-name="Shoulder Bag Alba" data-category="ombro">
-              <a class="product-image" href="./produto.html">
-                <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=900&q=80" alt="Bolsa casual em look neutro" />
-              </a>
-              <div class="product-info">
-                <p>Shoulder Bag Alba</p>
-                <strong>R$ 219,90</strong>
-                <a class="product-cta" href="./produto.html">Ver produto</a>
-              </div>
-            </article>
-            <article class="product-card" data-name="Bolsa para Garrafa Noma" data-category="garrafa">
-              <a class="product-image" href="./produto.html">
-                <img src="https://images.unsplash.com/photo-1606522754091-a3bbf9ad4cb3?auto=format&fit=crop&w=900&q=80" alt="Bolsa compacta de couro" />
-              </a>
-              <div class="product-info">
-                <p>Bolsa para Garrafa Noma</p>
-                <strong>R$ 189,90</strong>
-                <a class="product-cta" href="./produto.html">Ver produto</a>
-              </div>
-            </article>
-          </div>
-          <p class="search-empty-state" hidden>Nenhum produto encontrado</p>
-        </div>
-      </section>
-    </main>
+    /* GRID */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      padding: 30px 80px 60px;
+    }
 
-    <footer class="site-footer">
-      <div class="footer-grid">
-        <div>
-          <a class="logo footer-logo" href="./index.html">
-            <img class="logo-image" src="./src/assets/skad-logo.svg" alt="SKAD" />
-          </a>
-          <p>Design e funcionalidade em cada detalhe. Bolsas que acompanham sua rotina com elegância.</p>
-        </div>
-        <div>
-          <h3>Institucional</h3>
-          <a href="./sobre.html">Sobre Nós</a>
-          <a href="./trocas.html">Política de Trocas</a>
-          <a href="./privacidade.html">Política de Privacidade</a>
-        </div>
-        <div>
-          <h3>Categorias</h3>
-          <a href="./bolsas.html">Bolsas</a>
-          <a href="./index.html#necessaires">Necessaires</a>
-          <a href="./index.html#carteiras">Carteiras</a>
-          <a href="./index.html#ecobags">Eco Bags</a>
-        </div>
-        <div>
-          <h3>Contato</h3>
-          <a href="https://wa.me/558694370431" target="_blank" rel="noreferrer">WhatsApp +55 86 9437-0431</a>
-          <a href="https://www.instagram.com/skad.bags?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noreferrer">Instagram @skad.bags</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>SKAD (c) 2026. Loja fictícia para projeto.</span>
-      </div>
-    </footer>
-  </body>
+    /* CARD LUXO */
+    .product-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      transition: 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+
+    /* IMAGEM */
+    .image-box {
+      width: 100%;
+      height: 260px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.05);
+    }
+
+    /* TEXTO */
+    .product-name {
+      margin-top: 12px;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .product-price {
+      margin-top: 6px;
+      font-size: 14px;
+      color: #555;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="top-strip">
+    FRETE GRÁTIS ACIMA DE R$ 299 | 10% OFF NA PRIMEIRA COMPRA
+  </div>
+
+  <div class="header-main">
+    <a class="logo" href="./index.html">
+      <img src="./src/assets/skad-logo.svg">
+    </a>
+
+    <form class="site-search">
+      <input type="search" placeholder="O que você procura?">
+    </form>
+
+    <div class="header-actions">
+      <a href="./login.html">👤</a>
+      <a href="./carrinho.html">🛍️</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="page-hero">
+  <h1>Bolsas</h1>
+</section>
+
+<section class="product-grid">
+
+  <div class="product-card">
+    <div class="image-box">
+      <img src="./src/assets/produtos/bolsa1-ok.jpg">
+    </div>
+    <div class="product-name">Bolsa Tote Siena</div>
+    <div class="product-price">R$ 289,90</div>
+  </div>
+
+  <div class="product-card">
+    <div class="image-box">
+      <img src="./src/assets/produtos/bolsa8-ok.jpg">
+    </div>
+    <div class="product-name">Bolsa Estruturada Noir</div>
+    <div class="product-price">R$ 349,90</div>
+  </div>
+
+  <div class="product-card">
+    <div class="image-box">
+      <img src="./src/assets/produtos/bolsa11-ok.jpg">
+    </div>
+    <div class="product-name">Mochila Urban Soft</div>
+    <div class="product-price">R$ 259,90</div>
+  </div>
+
+  <div class="product-card">
+    <div class="image-box">
+      <img src="./src/assets/produtos/bolsa12-ok.jpg">
+    </div>
+    <div class="product-name">Bolsa Weekend Couro</div>
+    <div class="product-price">R$ 429,90</div>
+  </div>
+
+  <div class="product-card">
+    <div class="image-box">
+      <img src="./src/assets/produtos/bolsa13-ok.jpg">
+    </div>
+    <div class="product-name">Bolsa de Ombro Lumi</div>
+    <div class="product-price">R$ 319,90</div>
+  </div>
+
+  <div class="product-card">
+    <div class="image-box">
+      <img src="./src/assets/produtos/bolsa14-ok.jpg">
+    </div>
+    <div class="product-name">Bolsa Transversal Aura</div>
+    <div class="product-price">R$ 239,90</div>
+  </div>
+
+  <div class="product-card">
+    <div class="image-box">
+      <img src="./src/assets/produtos/bolsa19-ok.jpg">
+    </div>
+    <div class="product-name">Shoulder Bag Alba</div>
+    <div class="product-price">R$ 219,90</div>
+  </div>
+
+  <div class="product-card">
+    <div class="image-box">
+      <img src="./src/assets/produtos/bolsa21-ok.jpg">
+    </div>
+    <div class="product-name">Bolsa para Garrafa Noma</div>
+    <div class="product-price">R$ 189,90</div>
+  </div>
+
+</section>
+
+</main>
+
+</body>
 </html>
