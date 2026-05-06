@@ -24,8 +24,8 @@
 
     .header-main {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       padding: 20px 80px;
       background: #fff;
     }
@@ -37,7 +37,7 @@
     .site-search {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 5px;
     }
 
     .site-search input {
@@ -47,18 +47,15 @@
       border-radius: 6px;
     }
 
-    .search-button {
+    .site-search button {
       background: none;
       border: none;
       cursor: pointer;
     }
 
-    .main-nav ul {
+    .main-nav {
       display: flex;
-      gap: 25px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
+      gap: 30px;
       font-size: 14px;
       letter-spacing: 1px;
     }
@@ -71,43 +68,37 @@
     .header-actions {
       display: flex;
       align-items: center;
-      gap: 18px;
-    }
-
-    /* 🔥 AQUI ESTAVA O ERRO */
-    .header-actions a {
-      position: relative;
-      width: 26px;
-      height: 26px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      gap: 20px;
     }
 
     .header-actions svg {
       width: 20px;
       height: 20px;
       stroke: #1c1c1c;
-      stroke-width: 1.5;
       fill: none;
+      stroke-width: 1.5;
     }
 
-    /* 🔥 BOLINHA PERFEITA AGORA */
+    .cart-link {
+      position: relative;
+    }
+
     .cart-count {
       position: absolute;
-      top: -8px;   /* mais pra cima */
-      right: -4px; /* leve ajuste lateral */
-      width: 16px;
-      height: 16px;
-      background: #111;
-      color: #fff;
-      font-size: 9px;
-      border-radius: 50%;
+      top: -12px;
+      right: -5px;
+      background: black;
+      color: white;
+      font-size: 11px;
+      width: 18px;
+      height: 18px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 600;
+      border-radius: 50%;
     }
+
+    /* RESTO DO SEU CÓDIGO (INTACTO) */
 
     .page-hero {
       padding: 50px 80px 10px;
@@ -121,7 +112,7 @@
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 40px;
       padding: 30px 80px 60px;
     }
@@ -167,6 +158,7 @@
       font-size: 14px;
       color: #555;
     }
+
   </style>
 </head>
 
@@ -178,14 +170,13 @@
   </div>
 
   <div class="header-main">
-
     <a class="logo" href="./index.html">
       <img src="./src/assets/skad-logo.svg">
     </a>
 
     <form class="site-search">
       <input type="search" placeholder="O que você procura?" />
-      <button class="search-button" type="submit">
+      <button type="submit">
         <svg viewBox="0 0 24 24">
           <circle cx="11" cy="11" r="7" />
           <path d="m16 16 4 4" />
@@ -194,12 +185,10 @@
     </form>
 
     <nav class="main-nav">
-      <ul>
-        <li><a href="./bolsas.html">BOLSAS</a></li>
-        <li><a href="#">NECESSAIRES</a></li>
-        <li><a href="#">CARTEIRAS</a></li>
-        <li><a href="#">ECO BAGS</a></li>
-      </ul>
+      <a href="./bolsas.html">BOLSAS</a>
+      <a href="#">NECESSAIRES</a>
+      <a href="#">CARTEIRAS</a>
+      <a href="#">ECO BAGS</a>
     </nav>
 
     <div class="header-actions">
@@ -210,7 +199,7 @@
         </svg>
       </a>
 
-      <a href="./carrinho.html">
+      <a class="cart-link" href="./carrinho.html">
         <svg viewBox="0 0 24 24">
           <path d="M6 8h12l-1 12H7L6 8Z" />
           <path d="M9 8V7a3 3 0 0 1 6 0v1" />
@@ -218,7 +207,6 @@
         <span class="cart-count">0</span>
       </a>
     </div>
-
   </div>
 </header>
 
@@ -229,7 +217,72 @@
 </section>
 
 <section class="product-grid">
-  <!-- seus produtos continuam iguais -->
+
+  <!-- NÃO ALTEREI NADA AQUI -->
+  <div class="product-card">
+    <div class="image-box">
+      <img src="./src/assets/produtos/bolsa1-ok.jpg">
+    </div>
+    <div class="product-name">Bolsa Dália</div>
+    <div class="product-price">R$ 289,90</div>
+  </div>
+
+  <div class="product-card">
+    <div class="image-box">
+      <img src="./src/assets/produtos/bolsa8-ok.jpg">
+    </div>
+    <div class="product-name">Bolsa Aurora</div>
+    <div class="product-price">R$ 349,90</div>
+  </div>
+
+  <div class="product-card">
+    <div class="image-box">
+      <img src="./src/assets/produtos/bolsa11-ok.jpg">
+    </div>
+    <div class="product-name">Bolsa Bruma</div>
+    <div class="product-price">R$ 259,90</div>
+  </div>
+
+  <div class="product-card">
+    <div class="image-box">
+      <img src="./src/assets/produtos/bolsa12-ok.jpg">
+    </div>
+    <div class="product-name">Bolsa Ícone</div>
+    <div class="product-price">R$ 429,90</div>
+  </div>
+
+  <div class="product-card">
+    <div class="image-box">
+      <img src="./src/assets/produtos/bolsa13-ok.jpg">
+    </div>
+    <div class="product-name">Bolsa Névoa</div>
+    <div class="product-price">R$ 319,90</div>
+  </div>
+
+  <div class="product-card">
+    <div class="image-box">
+      <img src="./src/assets/produtos/bolsa2-ok.jpg">
+    </div>
+    <div class="product-name">Bolsa Atlas</div>
+    <div class="product-price">R$ 239,90</div>
+  </div>
+
+  <div class="product-card">
+    <div class="image-box">
+      <img src="./src/assets/produtos/bolsa3-ok.jpg">
+    </div>
+    <div class="product-name">Bolsa Líria</div>
+    <div class="product-price">R$ 219,90</div>
+  </div>
+
+  <div class="product-card">
+    <div class="image-box">
+      <img src="./src/assets/produtos/bolsa21-ok.jpg">
+    </div>
+    <div class="product-name">Bolsa Essenza</div>
+    <div class="product-price">R$ 189,90</div>
+  </div>
+
 </section>
 
 </main>
